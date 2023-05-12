@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bg{
+    background-image: url('../images/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel-inner{
+    border-radius: 1.5rem;
+}
+
+.carousel-caption{
+    background: #00000056;
+}
+
+.h{
+    height: 23rem;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.bg-black-70{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.bg-cpr-c,
+.bg-cpr{
+    background-color: rgb(100 25 36);
+}
+
+.bg-cpr{
+    background-image: url(../images/ffff.png);
+}
+
+.bg-choking-c,
+.bg-choking{
+    background-color: rgb(21 44 76);
+}
+
+.bg-choking{
+    background-image: url(../images/abdominal-thrusts.png);
+}
+
+.bg-wound-c,
+.bg-wound{
+    background-color: rgb(75 44 40);
+}
+
+.bg-wound{
+    background-image: url(../images/bleeding.png);
+}
+
+.bg-kit-c,
+.bg-kit{
+    background-color: rgb(39 48 51);
+}
+
+.bg-kit{
+    background-image: url(../images/first-aid-kit.png);
+}
+
+.bg-training-c,
+.bg-training{
+    background-color: #52410f;
+}
+
+.bg-training{
+    background-image: url(../images/intangible-asset.png);
+}
+
+.bg-cpr,
+.bg-choking,
+.bg-wound,
+.bg-kit,
+.bg-training
+{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 1rem;
+    background-position: center;
+    border-radius: 2rem;
+    border: 10px solid #ffffff73;
+    transition: .5s;
+}
+
+.bg-cpr:hover,
+.bg-choking:hover,
+.bg-wound:hover,
+.bg-kit:hover,
+.bg-training:hover{
+    transform: translateY(-1rem);
+}
+
+.tech{
+    text-shadow: 0 0 10px #514c4d;
+    margin-top: 8rem;
+}
+
+.btn-close{
+    opacity: 1;
+    background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\' fill=\'%23fff\'%3e%3cpath d=\'M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z\'/%3e%3c/svg%3e');
+}
