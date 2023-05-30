@@ -24,9 +24,26 @@
                       <li class="nav-item">
                           <a class="nav-link" href="#t">First Aid Topics</a>
                       </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#"></a>
+                      <li class="nav-item mx-5">
+                          <a class="nav-link btn btn-danger mx-auto" href="tel:911">If you have an emergency case call 911</a>
                       </li>
+                      <form id="search-form" class="d-flex" style="position: absolute; right: 0;">
+                        <input class="form-control mr-sm-2"id="search-input" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0 mx-4" type="submit" >Search</button>
+                        <div class="modal fade" id="search" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content bg-dark text-white text-center">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Search</h1>
+                                <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="search-body overflow-auto">
+                                No results found.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                   </ul>
               </div>
           </nav>
@@ -353,5 +370,38 @@
   </footer>
     <script src="./libs/jQuery/jquery-3.6.0.min.js"></script>
     <script src="./libs/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+      $('#search-form').submit(function(e) {
+        e.preventDefault();
+        
+        var searchText = $('#search-input').val();
+        if (searchText == null || searchText === '') {
+          return;
+        }
+
+        $('#search').modal('show');
+        var $searchModal = $('.search-body');
+    
+        $searchModal.empty();
+    
+        var itContains = false;
+        $('.modal-body').each(function() {
+          var modalBodyText = $(this).text().toLowerCase();
+          if (modalBodyText.includes(searchText)) {
+            $(this).clone().appendTo($searchModal);
+            $searchModal.append('<hr />');
+            itContains = true;
+          }
+        });
+
+        if(!itContains){
+          $searchModal.text('No results found.');
+        }
+
+      });
+      });
+   
+     </script>
 </body>
 </html>
